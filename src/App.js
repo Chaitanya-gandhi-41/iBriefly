@@ -6,13 +6,18 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Team from "./Pages/Team/Team";
 import About from "./Pages/About/About";
 import Legal from "./Pages/Legal/legal";
+import { NavBar } from "./Components/NavBar";
+import { Footer } from "./Components/Footer";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Skills } from "./Components/Skills";
+import { Contact } from "./Components/Contact";
 
+import { StartBanner } from "./Components/StartBanner";
 const App = () => {
   return (
     <div>
-      <nav className="navbar sticky-top navbar-expand-lg navbar-light bg-light">
-        <div className="container">
-          <button
+      {/* <div className=""> */}
+      {/* <button
             className="navbar-toggler"
             type="button"
             data-toggle="collapse"
@@ -22,8 +27,8 @@ const App = () => {
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
-          </button>
-          <a className="navbar-brand" href="/">
+          </button> */}
+      {/* <a className="navbar-brand" href="/">
             <img
               src="/logo.png"
               height="30"
@@ -31,9 +36,9 @@ const App = () => {
               alt=""
             />
             iBreifly
-          </a>
+          </a> */}
 
-          <div
+      {/* <div
             className="collapse navbar-collapse"
             style={{ "justify-content": "flex-end" }}
             id="navbarTogglerDemo03"
@@ -65,29 +70,39 @@ const App = () => {
                 </a>
               </li>
             </ul>
-          </div>
-        </div>
-      </nav>
+          </div> */}
+      {/* </div> */}
+      <NavBar />
+
       <Router>
         <Switch>
           <Route exact path="/">
+            <StartBanner />
+            <Skills />
+            <Contact />
+          </Route>
+          <Route exact path="/Home">
+            <div style={{ paddingTop: "80px" }}></div>
             <Home />
           </Route>
-          <Route exact path="/zoom">
-            <Zoom />
+          <Route exact path="/home">
+            <div style={{ paddingTop: "80px" }}></div>
+            <Home />
           </Route>
           <Route exact path="/legal">
+            <div style={{ paddingTop: "80px" }}></div>
             <Legal />
           </Route>
-          <Route exact path="/about">
-            <About />
+          <Route exact path="/Team">
+            <div style={{ paddingTop: "80px" }}></div>
+            <Team />
           </Route>
           <Route exact path="/teame">
             <Team />
           </Route>
         </Switch>
       </Router>
-      <div className="footer">
+      {/* <div className="footer">
         <div className="container">
           <img
             src="/logo.png"
@@ -97,7 +112,8 @@ const App = () => {
           />
           iBreifly
         </div>
-      </div>
+      </div> */}
+      <Footer />
     </div>
   );
 };
